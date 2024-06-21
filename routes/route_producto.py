@@ -18,6 +18,14 @@ def home():
         200
     )
 
+@api_producto.route('/producto/vigentes')
+@token_required
+def listar_vigentes():
+    return make_response(
+        jsonify({"msg" : "OK", "code" : 200, "datos" : ([i.serialize for i in productoC.listarVigentes()])}), 
+        200
+    )
+
 
 
 @api_producto.route('/producto/guardar'   , methods = ["POST"])
@@ -50,3 +58,4 @@ def actualizar_estados():
                 jsonify({"msg" : "ERROR", "code" : 400, "datos" :{"error" : "No se puede actualizar"}}), 
                 400
     )
+

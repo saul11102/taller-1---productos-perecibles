@@ -11,6 +11,9 @@ class ProductoControl:
     def listar(self):
         return Producto.query.all()
     
+    def listarVigentes(self):
+        return Producto.query.filter_by(stock = 1)
+    
     def guardarProducto(self, data):
         if data:  
             

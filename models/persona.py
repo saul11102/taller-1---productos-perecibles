@@ -9,6 +9,7 @@ class Persona(db.Model):
     cedula       = db.Column(db.String(10), nullable = False, unique = True)
     apellido = db.Column(db.String(50), nullable = False)
     estado    = db.Column(db.Boolean, nullable = False, default = True)
+    perfil  = db.Column(db.String(255), nullable = True)
     
     #default
     created_at = db.Column(db.DateTime, default = datetime.now)

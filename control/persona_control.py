@@ -4,6 +4,8 @@ from app import db
 from datetime import datetime, timedelta
 from flask import current_app   
 from models.cuenta import Cuenta
+import os
+from flask import current_app
 
 class PersonaControl:
     persona = Persona()
@@ -51,3 +53,13 @@ class PersonaControl:
                 return cuenta_new.id
         else:
             return -2
+
+    def subir_img_perfil(self, files):#, uid_persona):
+        
+        file = files['file']
+
+        name = file.filename
+
+        file.save(os.path.join(current_app.config['MEDIA_PERFIL'], name))
+
+        return 1

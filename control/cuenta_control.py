@@ -27,11 +27,11 @@ class CuentaControl:
                 persona = cuenta.getPersona(cuentaA.persona_id)
                 info = {
                     "token": token,
-                    "user": persona.apellido+" "+persona.nombre
+                    "user": persona.nombre +" "+persona.apellido
                 }   
                 return info 
             else:
                 return -4
         else:
             return -4
-        
+  

@@ -32,7 +32,9 @@ def guardar_lote():
                 200
         )
     else:
+        
         return make_response(
+                
                 jsonify({"msg" : "ERROR", "code" : 400, "datos" :{"error" : Errors.error[str(id)]}}), 
                 400
     )

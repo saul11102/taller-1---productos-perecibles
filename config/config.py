@@ -9,6 +9,8 @@ class Config:
     #configuracion general
     FLASK_APP = environ.get('FLASK_APP')
     FLASK_ENV = environ.get('FLASK_ENV')
+    MEDIA_PERFIL = environ.get('CARPETA_PERFIL')
+    
     #configuracion BD
     user = environ.get("MYSQL_USER")
     password = environ.get("MYSQL_PASSWORD")
